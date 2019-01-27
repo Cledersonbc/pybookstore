@@ -1,0 +1,55 @@
+swagger: "2.0"
+info:
+  description: Swagger file, server's configuration
+  version: "1.0.0"
+  title: Swagger Pystore
+consumes:
+  - "application/json"
+produces:
+  - "application/json"
+
+basePath: "/api"
+
+paths:
+  /books:
+    get:
+      operationId: "books.read"
+      tags:
+        - "Books"
+      summary: "The books data structure supported by the server application"
+      description: "Read the list of books"
+      responses:
+        200:
+          description: "Successful read books list operation"
+          schema:
+            type: "array"
+            items:
+              properties:
+                name:
+                  type: "string"
+                price:
+                  type: "number"
+                height:
+                  type: "number"
+                width:
+                  type: "number"
+                weight:
+                  type: "number"
+                author:
+                  type: "string"
+                description:
+                  type: "string"
+                year:
+                  type: "integer"
+                format:
+                  type: "string"
+                pages:
+                  type: "integer"
+                language:
+                  type: "string"
+                publisher:
+                  type: "string"
+                edition:
+                  type: "integer"
+                isbn:
+                  type: "string"

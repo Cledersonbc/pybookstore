@@ -13,7 +13,7 @@ basePath: "/api"
 paths:
   /books:
     get:
-      operationId: "books.read"
+      operationId: "api.books.read"
       tags:
         - "Books"
       summary: "The books data structure supported by the server application"

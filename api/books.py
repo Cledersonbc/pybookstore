@@ -11,9 +11,17 @@ def read_example():
         return None
 
 
-def read():
+def read_all():
     """
-    This function responds requests to a response
-    for /api/books
+    URL: /api/books
+    :return: a list of books
     """
     return read_example()
+
+
+def read(bookId):
+    """
+    URL: /api/books
+    :return: a book (if found) by ID
+    """
+    return None

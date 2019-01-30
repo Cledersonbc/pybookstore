@@ -2,54 +2,102 @@ swagger: "2.0"
 info:
   description: Swagger file, server's configuration
   version: "1.0.0"
-  title: Swagger Pystore
+  title: Swagger Pybookstore
 consumes:
-  - "application/json"
+  - application/json
 produces:
-  - "application/json"
+  - application/json
 
-basePath: "/api"
+basePath: /api
 
 paths:
   /books:
     get:
-      operationId: "api.books.read"
+      operationId: api.books.read_all
       tags:
-        - "Books"
-      summary: "The books data structure supported by the server application"
-      description: "Read the list of books"
+        - Books
+      summary: The books data structure supported by the server application
+      description: Read the list of books
       responses:
         200:
-          description: "Successful read books list operation"
+          description: OK
           schema:
-            type: "array"
+            type: array
             items:
               properties:
                 name:
-                  type: "string"
+                  type: string
                 price:
-                  type: "number"
+                  type: number
                 height:
-                  type: "number"
+                  type: number
                 width:
-                  type: "number"
+                  type: number
                 weight:
-                  type: "number"
+                  type: number
                 author:
-                  type: "string"
+                  type: string
                 description:
-                  type: "string"
+                  type: string
                 year:
-                  type: "integer"
+                  type: integer
                 format:
-                  type: "string"
+                  type: string
                 pages:
-                  type: "integer"
+                  type: integer
                 language:
-                  type: "string"
+                  type: string
                 publisher:
-                  type: "string"
+                  type: string
                 edition:
-                  type: "integer"
+                  type: integer
                 isbn:
-                  type: "string"
+                  type: string
+
+
+  /books/{bookId}:
+    get:
+      operationId: api.books.read
+      tags:
+        - Books
+      summary: Return a book by ID
+      description: Read a book
+      parameters:
+        - name: bookId
+          in: path
+          required: true
+          description: ID of the book
+          type: integer
+      responses:
+        200:
+          description: OK
+          schema:
+            properties:
+              name:
+                type: string
+              price:
+                type: number
+              height:
+                type: number
+              width:
+                type: number
+              weight:
+                type: number
+              author:
+                type: string
+              description:
+                type: string
+              year:
+                type: integer
+              format:
+                type: string
+              pages:
+                type: integer
+              language:
+                type: string
+              publisher:
+                type: string
+              edition:
+                type: integer
+              isbn:
+                type: string

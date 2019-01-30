@@ -21,7 +21,7 @@ def read_all():
 
 def read(bookId):
     """
-    URL: /api/books
+    URL: /api/books/{bookId}
     :return: a book (if found) by ID
     """
     return None

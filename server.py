@@ -11,5 +11,10 @@ def home():
     return render_template('home.html')
 
 
+@app.route('/books/new')
+def newbook():
+    return render_template('newbook.html')
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)

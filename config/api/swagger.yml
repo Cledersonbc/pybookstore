@@ -25,6 +25,8 @@ paths:
             type: array
             items:
               properties:
+                id:
+                  type: integer
                 name:
                   type: string
                 price:
@@ -73,6 +75,8 @@ paths:
           description: OK
           schema:
             properties:
+              id:
+                type: integer
               name:
                 type: string
               price:

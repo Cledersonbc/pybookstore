@@ -22,7 +22,7 @@
 		<button onclick="loadExample()" class="waves-effect waves-light btn-small">Load Example</button>
 		<div id="test-book" class="collection">
 		</div>
-            
+        
       </div>
     </div>
   </div>
@@ -32,15 +32,15 @@
 
 {% block extrabody%}
 <script>
-	function loadExample() {
-		$.ajax({
-			type: 'GET',
-			url: '/api/books',
-			dataType: 'json',
-			success: function successFunction(data) {
-				$("#test-book").html("<a href=\"#!\" class=\"collection-item\">"+ data.name +" - "+ data.author +"</a>");
-			}
-		});
-	}
-</script>
+  function loadExample() {
+	  $.ajax({
+		  type: 'GET',
+		  url: '/api/books',
+		  dataType: 'json',
+		  success: function successFunction(data) {
+			  $("#test-book").html("<a href=\"#!\" class=\"collection-item\">"+ data.name +" - "+ data.author +"</a>");
+		  }
+	  });
+  }
+  </script>
 {% endblock %}

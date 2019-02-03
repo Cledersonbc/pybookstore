@@ -25,8 +25,9 @@
 		</ul>
       </div>
 	</nav>
-    
-	{% block content %}{% endblock %}
+    <main>
+	  {% block content %}{% endblock %}
+	</main>
 	<script type="text/javascript" src="{{ url_for('static', filename='vendor/materialize/js/materialize.min.js')}}"></script>
 	{% block extrabody %}{% endblock %}
   </body>

@@ -13,7 +13,7 @@
 		  <h6>General Information</h6>
 		  <div class="row">
 			<div class="input-field col s6">
-			  <input id="name" name="name" type="text" class="validate" required>
+			  <input id="name" name="title" type="text" class="validate" required>
 			  <label for="name">Name</label>
 			  <span class="helper-text" data-error="Name of the book are required" data-success="OK"></span>
 			</div>
@@ -26,7 +26,15 @@
 
 		  <div class="row">
 			<div class="input-field col s12">
-			  <textarea id="description" placeholder="Summary or description about the book" class="materialize-textarea" class="validate" required></textarea>
+			  <textarea id="subtitle" name="subtitle" placeholder="Subtitle of this book" class="materialize-textarea"></textarea>
+			  <label for="subtitle">Subtitle</label>
+			  <span class="helper-text"></span>
+			</div>
+		  </div>
+
+		  <div class="row">
+			<div class="input-field col s12">
+			  <textarea id="description" name="description" placeholder="Summary or description about the book" class="materialize-textarea" class="validate" required></textarea>
 			  <label for="description">Description</label>
 			  <span class="helper-text" data-error="Description or summary of the book are required" data-success="OK"></span>
 			</div>

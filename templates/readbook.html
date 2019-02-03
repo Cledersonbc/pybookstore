@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% block title %}Pybookstore | {{ context['title'] }} - {{ context['author'] }} {% endblock %}
+{% block content %}
+
+<div class="row">
+  <div class="col s12 m9">
+    <div class="card white">
+      <div class="card-content">
+        <span class="card-title">
+		  {{ context['title'] }}{% if context['subtitle'] %}: {{ context['subtitle'] }}{% endif %}
+		  - {{ context['author'] }}
+		</span>
+		<br>
+		<p>{{ context['description'] }}</p>
+		<br>
+		<b></b>
+
+		<table class="striped">
+		  <tbody>
+			<tr><td>
+				<p><b>Author: </b> {{ context['author']}}</p>
+			</td></tr>
+			<tr><td>
+				<p><b>Publisher: </b> {{ context['publisher']}}</p>
+			</td></tr>
+			<tr><td>
+				<p><b>Edition: </b> {{ context['edition']}}</p>
+			</td></tr>
+			<tr><td>
+				<p><b>Year: </b> {{ context['year']}}</p>
+			</td></tr>
+			<tr><td>
+				<p><b>Language: </b> {{ context['language']}}</p>
+			</td></tr>
+			<tr><td>
+				<p><b>Price: </b> {{ context['price']}}</p>
+			</td></tr>
+		  </tbody>
+		</table>
+
+		<br>
+		<hr>
+		<br>
+
+		<h5>More about this book</h5>
+		<br>
+		<table class="striped">
+		  <tbody>
+			<tr><td>
+				<p><b>Format: </b> {{ context['format']}}</p>
+			</td></tr>
+			<tr><td>
+				<p><b>Number of pages: </b> {{ context['pages']}}</p>
+			</td></tr>
+			<tr><td>
+				<p><b>Weight: </b> {{ context['weight']}} kg</p>
+			</td></tr>
+			<tr><td>
+				<p><b>Height: </b> {{ context['height']}} cm</p>
+			</td></tr>
+			<tr><td>
+				<p><b>Width: </b> {{ context['width']}} cm</p>
+			</td></tr>
+			<tr><td>
+				<p><b>ISBN: </b> {{ context['isbn']}}</p>
+			</td></tr>
+		  </tbody>
+		</table>
+		
+      </div>
+      <div class="card-action">
+		<!--<a href="#">This is a link</a>-->
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m3">
+	<div class="card">
+      <div class="card-content">
+        <span class="card-title">Sidebar</span>
+        <p>Some text...</p>
+      </div>
+      <div class="card-action">
+        <!--<a href="#">This is a link</a>-->
+      </div>
+	</div>
+  </div>
+
+  {% endblock %}

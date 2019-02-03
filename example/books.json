@@ -1,6 +1,7 @@
 {
   "id": 1,
-  "name": "Homo Deus",
+  "title": "Homo Deus",
+  "subtitle": "Uma breve história do amanhã",
   "price": 47.90,
   "height": 23.00,
   "width": 16.00,

@@ -38,7 +38,7 @@
 		  url: '/api/books',
 		  dataType: 'json',
 		  success: function successFunction(data) {
-			  $("#test-book").html("<a href=\"#!\" class=\"collection-item\">"+ data.name +" - "+ data.author +"</a>");
+			  $("#test-book").html("<a href=\"#!\" class=\"collection-item\">"+ data.title +" - "+ data.author +"</a>");
 		  }
 	  });
   }

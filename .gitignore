@@ -122,3 +122,6 @@ dmypy.json
 
 # Sass cache
 .sass-cache
+
+# Flymd files
+flymd.*

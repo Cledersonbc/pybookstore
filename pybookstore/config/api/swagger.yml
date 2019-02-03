@@ -13,7 +13,7 @@ basePath: /api
 paths:
   /books:
     get:
-      operationId: api.books.read_all
+      operationId: pybookstore.api.books.read_all
       tags:
         - Books
       summary: The books data structure supported by the server application
@@ -27,7 +27,9 @@ paths:
               properties:
                 id:
                   type: integer
-                name:
+                title:
+                  type: string
+                subtitle:
                   type: string
                 price:
                   type: number
@@ -54,12 +56,12 @@ paths:
                 edition:
                   type: integer
                 isbn:
-                  type: string
+                  type: integer
 
 
   /books/{bookId}:
     get:
-      operationId: api.books.read
+      operationId: pybookstore.api.books.read
       tags:
         - Books
       summary: Return a book by ID
@@ -106,4 +108,4 @@ paths:
               edition:
                 type: integer
               isbn:
-                type: string
+                type: integer

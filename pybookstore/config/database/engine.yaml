@@ -1,0 +1,21 @@
+# Database configuration
+# URL Format: dialect+driver://username:password@host:port/database
+
+production_url:
+  dialect: dialect
+  driver: driver
+  username: username
+  password: password
+  host: host
+  port: host
+  database: database
+
+
+test_url:
+  dialect: sqlite
+  driver: null
+  username: null
+  password: null
+  host: null
+  port: null
+  database: /db.sqlite3

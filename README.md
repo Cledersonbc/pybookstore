@@ -16,7 +16,7 @@ Visit [http://localhost:5000](http://localhost:5000).
 
 The swagger-ui is available at [http://localhost/api/ui](http://localhost/api/ui).
 
-**TODO** list
+# TODO list
 
 **Simple Pages, CRUD book**
 * [X] Home
@@ -72,5 +72,5 @@ The swagger-ui is available at [http://localhost/api/ui](http://localhost/api/ui
 
 
 **Security**
-* Access to API
-* Acess to CRUD operations (without API, only with user's account)
+* [ ] Access to API
+* [ ] Acess to CRUD operations (without API, only with user's account)

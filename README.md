@@ -8,7 +8,7 @@ A book store written in Python as RESTful application.
 	$ python3 -m venv env
 	$ source env/bin/activate
 	$ pip install -r requirements.txt
-	$ python3 server.py
+	$ python3 run.py
 ```
 
 Visit [http://localhost:5000](http://localhost:5000).
@@ -58,6 +58,7 @@ The swagger-ui is available at [http://localhost/api/ui](http://localhost/api/ui
 * [ ] Comments
 * [ ] Top books
 * [ ] Smart search of book images using webscrapping
+* [ ] Internationalization
 
 
 **API Books**

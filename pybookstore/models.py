@@ -1,4 +1,4 @@
-from server import db
+from pybookstore import db
 
 
 class Book(db.Model):

@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}Pybookstore | {{ context['title'] }} - {{ context['author'] }} {% endblock %}
+{% block title %}Pybookstore | {{ book.title }} - {{ book.author }}{% endblock %}
 {% block content %}
 
 <div class="row">
@@ -7,33 +7,32 @@
     <div class="card white">
       <div class="card-content">
         <span class="card-title">
-		  {{ context['title'] }}{% if context['subtitle'] %}: {{ context['subtitle'] }}{% endif %}
-		  - {{ context['author'] }}
+		  {{ book.title }}{{ ': ' + book.subtitle if book.subtitle is not none }} - {{ book.author }}
 		</span>
 		<br>
-		<p>{{ context['description'] }}</p>
+		<p>{{ book.description if book.description is not none else 'N/A' }}</p>
 		<br>
 		<b></b>
 
 		<table class="striped">
 		  <tbody>
 			<tr><td>
-				<p><b>Author: </b> {{ context['author']}}</p>
+				<p><b>Author: </b> {{ book.author if book.author is not none else 'N/A' }}</p>
 			</td></tr>
 			<tr><td>
-				<p><b>Publisher: </b> {{ context['publisher']}}</p>
+				<p><b>Publisher: </b> {{ book.publisher if book.publisher is not none else 'N/A' }}</p>
 			</td></tr>
 			<tr><td>
-				<p><b>Edition: </b> {{ context['edition']}}</p>
+				<p><b>Edition: </b> {{ book.edition if book.edition is not none else 'N/A' }}</p>
 			</td></tr>
 			<tr><td>
-				<p><b>Year: </b> {{ context['year']}}</p>
+				<p><b>Year: </b> {{ book.year if book.year is not none else 'N/A' }}</p>
 			</td></tr>
 			<tr><td>
-				<p><b>Language: </b> {{ context['language']}}</p>
+				<p><b>Language: </b> {{ book.language if book.language is not none else 'N/A' }}</p>
 			</td></tr>
 			<tr><td>
-				<p><b>Price: </b> {{ context['price']}}</p>
+				<p><b>Price: </b> {{ book.price if book.price is not none else 'N/A' }}</p>
 			</td></tr>
 		  </tbody>
 		</table>
@@ -47,22 +46,22 @@
 		<table class="striped">
 		  <tbody>
 			<tr><td>
-				<p><b>Format: </b> {{ context['format']}}</p>
+				<p><b>Format: </b> {{ book.format if book.format is not none else 'N/A' }}</p>
 			</td></tr>
 			<tr><td>
-				<p><b>Number of pages: </b> {{ context['pages']}}</p>
+				<p><b>Number of pages: </b> {{ book.pages if book.pages is not none else 'N/A' }}</p>
 			</td></tr>
 			<tr><td>
-				<p><b>Weight: </b> {{ context['weight']}} kg</p>
+				<p><b>Weight (kg): </b> {{ book.weight if book.weight is not none else 'N/A' }}</p>
 			</td></tr>
 			<tr><td>
-				<p><b>Height: </b> {{ context['height']}} cm</p>
+				<p><b>Height (cm): </b> {{ book.height if book.height is not none else 'N/A' }}</p>
 			</td></tr>
 			<tr><td>
-				<p><b>Width: </b> {{ context['width']}} cm</p>
+				<p><b>Width (cm): </b> {{ book.width if book.width is not none else 'N/A' }}</p>
 			</td></tr>
 			<tr><td>
-				<p><b>ISBN: </b> {{ context['isbn']}}</p>
+				<p><b>ISBN: </b>{{ book.isbn if book.isbn is not none else 'N/A' }}</p>
 			</td></tr>
 		  </tbody>
 		</table>

@@ -46,7 +46,7 @@ The swagger-ui is available at [http://localhost/api/ui](http://localhost/api/ui
 **Database**
 * [ ] Use of ORM
 * [X] Create DAO of book
-* [X] Create DAO of account
+* [ ] Create DAO of account
 
 
 **Page User Preferences**

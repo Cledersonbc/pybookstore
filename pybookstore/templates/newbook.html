@@ -14,7 +14,7 @@
 		  <div class="row">
 			<div class="input-field col s6">
 			  <input id="name" name="title" type="text" class="validate" required>
-			  <label for="name">Name</label>
+			  <label for="name">Title</label>
 			  <span class="helper-text" data-error="Name of the book are required" data-success="OK"></span>
 			</div>
 			<div class="input-field col s6">
@@ -61,9 +61,9 @@
 
 			<div class="input-field col s6">
 			  <select name="format">
-				<option value="1" selected>Physical</option>
-				<option value="2">E-book</option>
-				<option value="3">Audiobook</option>
+				<option value="Physical" selected>Physical</option>
+				<option value="E-book">E-book</option>
+				<option value="Audiobook">Audiobook</option>
 			  </select>
 			  <label>Book Format</label>
 			</div>
@@ -77,7 +77,7 @@
 			  <label for="language">Language</label>
 			</div>
 			<div class="input-field col s6">
-			  <input id="year" name="year" min="0" max="1000" type="number" class="validate">
+			  <input id="year" name="year" min="0" max="2999" type="number" class="validate">
 			  <label for="year">Year</label>
 			</div>
 		  </div>
@@ -88,8 +88,8 @@
 			  <label for="weight">Weight (kg)</label>
 			</div>
 			<div class="input-field col s6">
-			  <input id="page" name="page" type="number" class="validate">
-			  <label for="page">Number of Pages</label>
+			  <input id="pages" name="pages" type="number" class="validate">
+			  <label for="pages">Number of Pages</label>
 			</div>
 		  </div>
 

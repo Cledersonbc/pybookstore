@@ -17,7 +17,7 @@ def index():
 
 
 @app.route('/books/new', methods=['GET', 'POST'])
-def newbook():
+def new_book():
     if request.method == 'POST':
         book = Book()
         BookForm = model_form(Book)
@@ -68,5 +68,31 @@ def del_book():
         flash(f'Book "{book_info}" was removed successfully.', 'success')
         return redirect(url_for('index'))
     else:
-        flash(f'Error! Book not found to be removed.', 'error')
+        flash('Error! Book not found to be removed.', 'error')
         return redirect(url_for('index'))
+
+
+@app.route('/books/edit/<int:book_id>', methods=['GET', 'POST'])
+def edit_book(book_id):
+    book = Book.query.get(book_id)
+
+    if book is None:
+        flash('Error! Book not found to be updated.', 'error')
+        return redirect(url_for('index'))
+
+    if request.method == 'POST':
+        BookForm = model_form(Book)
+        form = BookForm(request.form, obj=book)
+
+        if form.validate():
+            form.populate_obj(book)
+            db.session.add(book)
+            db.session.commit()
+
+            book_info = book.title + ' - ' + book.author
+            flash(f'The Book "{book_info}" was updated successfully.',
+                  'success')
+            print('updated')
+            return redirect(url_for('index'))
+
+    return render_template('editbook.html', book=book)

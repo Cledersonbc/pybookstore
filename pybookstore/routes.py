@@ -1,5 +1,9 @@
+from flask import flash
 from flask import render_template
+from flask import redirect
 from flask import request
+from flask import url_for
+
 from wtforms.ext.sqlalchemy.orm import model_form
 
 from pybookstore import app
@@ -8,13 +12,12 @@ from pybookstore.models import Book
 
 
 @app.route('/', methods=['GET'])
-def home():
+def index():
     return render_template('home.html')
 
 
 @app.route('/books/new', methods=['GET', 'POST'])
 def newbook():
-
     if request.method == 'POST':
         book = Book()
         BookForm = model_form(Book)
@@ -25,11 +28,16 @@ def newbook():
             db.session.add(book)
             db.session.commit()
 
+            book_info = book.title + ' - ' + book.author
+            flash(f'The Book "{book_info}" was added successfully.', 'success')
+
+            return redirect(url_for('index'))
+
     return render_template('newbook.html')
 
 
 @app.route('/books/view/<int:book_id>', methods=['GET'])
-def viewbook(book_id):
+def view_book(book_id):
     book = Book.query.get(book_id)
 
     # TODO redirect to 404 page if not found
@@ -37,3 +45,11 @@ def viewbook(book_id):
         return render_template('readbook.html', book=book)
 
     return render_template('home.html')
+
+
+@app.route('/books/mybooks', methods=['GET'])
+def view_all_books():
+    books = Book.query.all()
+
+    if books is not None:
+        return render_template('allbooks.html', books=books)

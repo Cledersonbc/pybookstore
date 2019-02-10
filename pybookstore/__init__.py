@@ -14,6 +14,7 @@ app = connextion_app.app
 app.config["SQLALCHEMY_ECHO"] = True
 app.config["SQLALCHEMY_DATABASE_URI"] = f'sqlite:///{URL_SQL}'
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+app.config["SECRET_KEY"] = b'\26A5#!6_2@SA\\&'
 db = SQLAlchemy(app)
 ma = Marshmallow(app)
 

@@ -30,7 +30,9 @@
 		{% if messages is not none %}
 		  {% for category, message in messages %}
 			{% if category == 'success' %}
-			  <div class="green darken-2 white-text center">{{ message }}</div>
+			  <div class="teal lighten-1 white-text center">{{ message }}</div>
+			{% elif category == 'error' %}
+			  <div class="red darken-2 white-text center">{{ message }}</div>
 			{% endif %}
 		  {% endfor %}
 		{% endif %}

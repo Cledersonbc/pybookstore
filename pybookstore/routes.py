@@ -53,3 +53,20 @@ def view_all_books():
 
     if books is not None:
         return render_template('allbooks.html', books=books)
+
+
+@app.route('/books/del', methods=['POST'])
+def del_book():
+    book_id = request.form['book_id']
+    book = Book.query.get(book_id)
+
+    if book is not None:
+        book_info = book.title + ' - ' + book.author
+        db.session.delete(book)
+        db.session.commit()
+
+        flash(f'Book "{book_info}" was removed successfully.', 'success')
+        return redirect(url_for('index'))
+    else:
+        flash(f'Error! Book not found to be removed.', 'error')
+        return redirect(url_for('index'))

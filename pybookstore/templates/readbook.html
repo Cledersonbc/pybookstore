@@ -68,8 +68,11 @@
 		
       </div>
       <div class="card-action">
-		<!--<a href="#">This is a link</a>-->
-      </div>
+		<div class="row">
+		  <buttton data-target="modal-delete"
+				   class="btn waves-effect waves-light red right modal-trigger">Delete</button>
+		</div>
+	  </div>
     </div>
   </div>
   <div class="col s12 m3">
@@ -83,5 +86,25 @@
       </div>
 	</div>
   </div>
+{% endblock %}
 
-  {% endblock %}
+{% block extrabody %}
+  <div id="modal-delete" class="modal">
+    <div class="modal-content">
+      <h4> Are you sure to delete this book?</h4>
+      <p>This action can not be undone and "{{ book.title }} - {{ book.author }}" will be permanently deleted.</p>
+    </div>
+    <div class="modal-footer">
+	  <form method="POST" action="{{url_for('del_book')}}">
+		<a href="#!" class="modal-close waves-effect waves-green btn-flat">Back</a>
+		<input type="hidden" name="book_id" value="{{ book.id }}">
+		<button type="submit" class="modal-close waves-effect red white-text btn-flat">Delete</button>
+	  </form>
+	</div>
+  </div>
+  <script>
+	$(document).ready(function(){
+		$('.modal').modal();
+	});
+  </script>
+{% endblock %}

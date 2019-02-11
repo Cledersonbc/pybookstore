@@ -3,43 +3,43 @@
   <head>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='vendor/materialize/css/materialize.min.css')}}"  media="screen,projection"/>
-	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='pybookstore/css/style.css')}}" media="screen,projection">	
-	
-	<script type="text/javascript" src="{{ url_for('static', filename='vendor/jquery/jquery-3.3.1.min.js')}}"></script>
-	
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='pybookstore/css/style.css')}}" media="screen,projection">   
+    
+    <script type="text/javascript" src="{{ url_for('static', filename='vendor/jquery/jquery-3.3.1.min.js')}}"></script>
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<meta charset="UTF-8">
-	<title>{% block title %}Pybookstore{% endblock %}</title>
-	{% block extrahead %}{% endblock %}
+    <meta charset="UTF-8">
+    <title>{% block title %}Pybookstore{% endblock %}</title>
+    {% block extrahead %}{% endblock %}
   </head>
   <body>
 
-	{# navbar #}
-	<nav class="indigo darken-3">
+    {# navbar #}
+    <nav class="indigo darken-3">
       <div class="nav-wrapper">
-		<a href="/" class="brand-logo">Pystore</a>
-		<ul id="nav-mobile" class="right hide-on-med-and-down">
+        <a href="/" class="brand-logo">Pystore</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="#!">Books</a></li>
           <li><a href="#!">About</a></li>
           <li><a href="#!">Login</a></li>
-		</ul>
+        </ul>
       </div>
-	</nav>
+    </nav>
     <main>
-	  {% with messages = get_flashed_messages(with_categories=true) %}
-		{% if messages is not none %}
-		  {% for category, message in messages %}
-			{% if category == 'success' %}
-			  <div class="teal lighten-1 white-text center">{{ message }}</div>
-			{% elif category == 'error' %}
-			  <div class="red darken-2 white-text center">{{ message }}</div>
-			{% endif %}
-		  {% endfor %}
-		{% endif %}
-	  {% endwith %}
-	  {% block content %}{% endblock %}
-	</main>
-	<script type="text/javascript" src="{{ url_for('static', filename='vendor/materialize/js/materialize.min.js')}}"></script>
-	{% block extrabody %}{% endblock %}
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages is not none %}
+          {% for category, message in messages %}
+            {% if category == 'success' %}
+              <div class="teal lighten-1 white-text center">{{ message }}</div>
+            {% elif category == 'error' %}
+              <div class="red darken-2 white-text center">{{ message }}</div>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+      {% block content %}{% endblock %}
+    </main>
+    <script type="text/javascript" src="{{ url_for('static', filename='vendor/materialize/js/materialize.min.js')}}"></script>
+    {% block extrabody %}{% endblock %}
   </body>
 </html>

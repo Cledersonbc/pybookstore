@@ -1,35 +1,36 @@
 {% extends 'base.html' %}
 {% block title %}Pybookstore - My books{% endblock %}
 {% block content %}
-  <div class="row">
-	
-	<div class="col s12 m12 newbook-form">
-      <div class="card white lighten-4">
-		<div class="card-content">
-		  
-		  {% if books is not none %}
-			<table class="striped">
-			  <thead>
-				<tr>
-				  <th>Book</th>
-				  <th>Description</th>
-				</tr>
-			  </thead>
-			  
-			  <tbody>
-				{% for book in books %}
-				  <tr>
-					<td>
-					  <a href="/books/view/{{book.id}}">{{ book.title }} - {{ book.author }}</a>
-					</td>
-					<td>{{ book.description[:30] }}</td>
-				  </tr>
-				{% endfor %}
-			  </tbody>
-			</table>
-		  {% endif %}
-		  
-		</div>
-	  </div>
-	</div>
+<div class="row">
+  
+  <div class="col s12 m12 newbook-form">
+    <div class="card white lighten-4">
+      <div class="card-content">
+        
+        {% if books is not none %}
+        <table class="striped">
+          <thead>
+            <tr>
+              <th>Book</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          
+          <tbody>
+            {% for book in books %}
+            <tr>
+              <td>
+                <a href="/books/view/{{book.id}}">{{ book.title }} - {{ book.author }}</a>
+              </td>
+              <td>{{ book.description[:30] }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% endif %}
+        
+      </div>
+    </div>
+  </div>
 {% endblock %}
+ 

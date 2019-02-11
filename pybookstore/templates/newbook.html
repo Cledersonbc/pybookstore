@@ -1,130 +1,130 @@
 {% extends 'base.html' %}
 {% block title %}Pybookstore - New book{% endblock %}
 {% block content %}
-<div class="row">
+  <div class="row">
 
-  <div class="col s12 m12 newbook-form">
-    <div class="card grey lighten-4">
-      <div class="card-content">
-        <span class="card-title">Register your new Book</span>
+    <div class="col s12 m12 newbook-form">
+      <div class="card grey lighten-4">
+        <div class="card-content">
+          <span class="card-title">Register your new Book</span>
 
-		<br>
-		<form method="POST" action="/books/new">
-		  <h6>General Information</h6>
-		  <div class="row">
-			<div class="input-field col s6">
-			  <input id="name" name="title" type="text" class="validate" required>
-			  <label for="name">Title</label>
-			  <span class="helper-text" data-error="Name of the book are required" data-success="OK"></span>
-			</div>
-			<div class="input-field col s6">
-			  <input  id="author" name="author" type="text" class="validate" required>
-			  <label for="author">Author</label>
-			  <span class="helper-text" data-error="Name of the author are required" data-success="OK"></span>
-			</div>
-		  </div>
+          <br>
+          <form method="POST" action="/books/new">
+            <h6>General Information</h6>
+            <div class="row">
+              <div class="input-field col s6">
+                <input id="name" name="title" type="text" class="validate" required>
+                <label for="name">Title</label>
+                <span class="helper-text" data-error="Name of the book are required" data-success="OK"></span>
+              </div>
+              <div class="input-field col s6">
+                <input  id="author" name="author" type="text" class="validate" required>
+                <label for="author">Author</label>
+                <span class="helper-text" data-error="Name of the author are required" data-success="OK"></span>
+              </div>
+            </div>
 
-		  <div class="row">
-			<div class="input-field col s12">
-			  <textarea id="subtitle" name="subtitle" placeholder="Subtitle of this book" class="materialize-textarea"></textarea>
-			  <label for="subtitle">Subtitle</label>
-			  <span class="helper-text"></span>
-			</div>
-		  </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <textarea id="subtitle" name="subtitle" placeholder="Subtitle of this book" class="materialize-textarea"></textarea>
+                <label for="subtitle">Subtitle</label>
+                <span class="helper-text"></span>
+              </div>
+            </div>
 
-		  <div class="row">
-			<div class="input-field col s12">
-			  <textarea id="description" name="description" placeholder="Summary or description about the book" class="materialize-textarea" class="validate" required></textarea>
-			  <label for="description">Description</label>
-			  <span class="helper-text" data-error="Description or summary of the book are required" data-success="OK"></span>
-			</div>
-		  </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <textarea id="description" name="description" placeholder="Summary or description about the book" class="materialize-textarea" class="validate" required></textarea>
+                <label for="description">Description</label>
+                <span class="helper-text" data-error="Description or summary of the book are required" data-success="OK"></span>
+              </div>
+            </div>
 
-		  <br>
-		  <h6>Information more Specific</h6>
-		  <div class="row">
-			<div class="input-field col s6">
-			  <input id="publisher" name="publisher" type="text" class="validate">
-			  <label for="publisher">Publisher</label>
-			</div>
-			<div class="input-field col s6">
-			  <input  id="edition" name="edition" min="1" max="999" type="number" class="validate">
-			  <label for="edition">Edition</label>
-			</div>
-		  </div>
+            <br>
+            <h6>Information more Specific</h6>
+            <div class="row">
+              <div class="input-field col s6">
+                <input id="publisher" name="publisher" type="text" class="validate">
+                <label for="publisher">Publisher</label>
+              </div>
+              <div class="input-field col s6">
+                <input  id="edition" name="edition" min="1" max="999" type="number" class="validate">
+                <label for="edition">Edition</label>
+              </div>
+            </div>
 
-		  <div class="row">
-			<div class="input-field col s6">
-			  <input id="isbn" name="isbn" type="text" class="validate">
-			  <label for="isbn">ISBN</label>
-			</div>
+            <div class="row">
+              <div class="input-field col s6">
+                <input id="isbn" name="isbn" type="text" class="validate">
+                <label for="isbn">ISBN</label>
+              </div>
 
-			<div class="input-field col s6">
-			  <select name="format">
-				<option value="Physical" selected>Physical</option>
-				<option value="E-book">E-book</option>
-				<option value="Audiobook">Audiobook</option>
-			  </select>
-			  <label>Book Format</label>
-			</div>
-		  </div>
+              <div class="input-field col s6">
+                <select name="format">
+                  <option value="Physical" selected>Physical</option>
+                  <option value="E-book">E-book</option>
+                  <option value="Audiobook">Audiobook</option>
+                </select>
+                <label>Book Format</label>
+              </div>
+            </div>
 
-		  <br>
-		  <h6>Extra</h6>
-		  <div class="row">
-			<div class="input-field col s6">
-			  <input id="language" name="language" type="text" class="validate">
-			  <label for="language">Language</label>
-			</div>
-			<div class="input-field col s6">
-			  <input id="year" name="year" min="0" max="2999" type="number" class="validate">
-			  <label for="year">Year</label>
-			</div>
-		  </div>
+            <br>
+            <h6>Extra</h6>
+            <div class="row">
+              <div class="input-field col s6">
+                <input id="language" name="language" type="text" class="validate">
+                <label for="language">Language</label>
+              </div>
+              <div class="input-field col s6">
+                <input id="year" name="year" min="0" max="2999" type="number" class="validate">
+                <label for="year">Year</label>
+              </div>
+            </div>
 
-		  <div class="row">
-			<div class="input-field col s6">
-			  <input id="weight" name="weight" min="0" max="1000" type="number" class="validate">
-			  <label for="weight">Weight (kg)</label>
-			</div>
-			<div class="input-field col s6">
-			  <input id="pages" name="pages" type="number" class="validate">
-			  <label for="pages">Number of Pages</label>
-			</div>
-		  </div>
+            <div class="row">
+              <div class="input-field col s6">
+                <input id="weight" name="weight" min="0" max="1000" type="number" class="validate">
+                <label for="weight">Weight (kg)</label>
+              </div>
+              <div class="input-field col s6">
+                <input id="pages" name="pages" type="number" class="validate">
+                <label for="pages">Number of Pages</label>
+              </div>
+            </div>
 
-		  <div class="row">
-			<div class="input-field col s6">
-			  <input id="width" name="width" min="0" max="1000" type="number" class="validate">
-			  <label for="width">Width (cm)</label>
-			</div>
-			<div class="input-field col s6">
-			  <input id="height" name="height" min="0" max="1000" type="number" class="validate">
-			  <label for="height">Height (cm)</label>
-			</div>
-		  </div>
+            <div class="row">
+              <div class="input-field col s6">
+                <input id="width" name="width" min="0" max="1000" type="number" class="validate">
+                <label for="width">Width (cm)</label>
+              </div>
+              <div class="input-field col s6">
+                <input id="height" name="height" min="0" max="1000" type="number" class="validate">
+                <label for="height">Height (cm)</label>
+              </div>
+            </div>
 
-		  <div class="row">
-			<div class="input-field col s12">
-			  <input id="price" name="price" type="text"  class="validate">
-			  <label for="price">Price</label>
-			</div>
-		  </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="price" name="price" type="text"  class="validate">
+                <label for="price">Price</label>
+              </div>
+            </div>
 
-		  <div class="row">
-			<button class="waves-effect waves-light btn btn-large indigo darken-4 right">Save</button>
-		  </div>
-		</form>
-	  </div>
+            <div class="row">
+              <button class="waves-effect waves-light btn btn-large indigo darken-4 right">Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 {% endblock %}
 
 {% block extrabody %}
-<script>
-  $(document).ready(function(){
-      $('select').formSelect();
-  });
+    <script>
+    $(document).ready(function(){
+        $('select').formSelect();
+    });
 </script>
 {% endblock%}

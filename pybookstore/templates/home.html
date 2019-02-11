@@ -1,46 +1,46 @@
 {% extends 'base.html'%}
 {% block title %}Pybookstore - Home{% endblock %}
 {% block content %}
-<div class="row">
-  <div class="col s12 m12">
-    <div class="card grey lighten-4">
-	  <div class="card-content">
-        <span class="card-title">Find your Favorite books here</span>
+  <div class="row">
+    <div class="col s12 m12">
+      <div class="card grey lighten-4">
+        <div class="card-content">
+          <span class="card-title">Find your Favorite books here</span>
 
-		<div class="nav-wrapper grey lighten-4">
-		  <form>
-			<div class="input-field">
-			  <input id="search" type="search" placeholder="Search a book..." required>
-			  <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-			  <i class="material-icons">close</i>
-			</div>
-		  </form>
-		</div>
+          <div class="nav-wrapper grey lighten-4">
+            <form>
+              <div class="input-field">
+                <input id="search" type="search" placeholder="Search a book..." required>
+                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                <i class="material-icons">close</i>
+              </div>
+            </form>
+          </div>
 
-		<br>
+          <br>
 
-		<button onclick="loadExample()" class="waves-effect waves-light btn-small">Load Example</button>
-		<div id="test-book" class="collection">
-		</div>
-        
-	  </div>
+          <button onclick="loadExample()" class="waves-effect waves-light btn-small">Load Example</button>
+          <div id="test-book" class="collection">
+          </div>
+          
+        </div>
+      </div>
     </div>
   </div>
-</div>
 
 {% endblock %}
 
 {% block extrabody %}
-  <script>
-	function loadExample() {
-		$.ajax({
-			type: 'GET',
-			url: '/api/books',
-			dataType: 'json',
-			success: function successFunction(data) {
-				$("#test-book").html("<a href=\"#!\" class=\"collection-item\">"+ data.title +" - "+ data.author +"</a>");
-			}
-		});
-	}
-  </script>
+    <script>
+    function loadExample() {
+        $.ajax({
+            type: 'GET',
+            url: '/api/books',
+            dataType: 'json',
+            success: function successFunction(data) {
+                $("#test-book").html("<a href=\"#!\" class=\"collection-item\">"+ data.title +" - "+ data.author +"</a>");
+            }
+        });
+    }
+</script>
 {% endblock %}

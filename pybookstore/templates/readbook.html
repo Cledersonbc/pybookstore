@@ -2,109 +2,124 @@
 {% block title %}Pybookstore | {{ book.title }} - {{ book.author }}{% endblock %}
 {% block content %}
 
-  <div class="row">
-    <div class="col s12 m9">
-      <div class="card white">
-        <div class="card-content">
-          <span class="card-title">
-            {{ book.title }}{{ ': ' + book.subtitle if book.subtitle is not none }} - {{ book.author }}
-          </span>
-          <br>
-          <p>{{ book.description if book.description is not none else 'N/A' }}</p>
-          <br>
-          <b></b>
+<div class="row">
+  <div class="col s12 m9">
+    <div class="card white">
+      <div class="card-content">
+        <span class="card-title">
+          {{ book.title }}{{ ': ' + book.subtitle if book.subtitle is not none }} - {{ book.author }}
+        </span>
+        <br>
+        <p>{{ book.description if book.description is not none else 'N/A' }}</p>
+        <br>
+        <b></b>
 
-          <table class="striped">
-            <tbody>
-              <tr><td>
-                  <p><b>Author: </b> {{ book.author if book.author is not none else 'N/A' }}</p>
-              </td></tr>
-              <tr><td>
-                  <p><b>Publisher: </b> {{ book.publisher if book.publisher is not none else 'N/A' }}</p>
-              </td></tr>
-              <tr><td>
-                  <p><b>Edition: </b> {{ book.edition if book.edition is not none else 'N/A' }}</p>
-              </td></tr>
-              <tr><td>
-                  <p><b>Year: </b> {{ book.year if book.year is not none else 'N/A' }}</p>
-              </td></tr>
-              <tr><td>
-                  <p><b>Language: </b> {{ book.language if book.language is not none else 'N/A' }}</p>
-              </td></tr>
-              <tr><td>
-                  <p><b>Price: </b> {{ book.price if book.price is not none else 'N/A' }}</p>
-              </td></tr>
-            </tbody>
-          </table>
+        <table class="striped">
+          <tbody>
+            <tr><td>
+                <p><b>Author: </b> {{ book.author if book.author is not none else 'N/A' }}</p>
+            </td></tr>
+            <tr><td>
+                <p><b>Publisher: </b> {{ book.publisher if book.publisher is not none else 'N/A' }}</p>
+            </td></tr>
+            <tr><td>
+                <p><b>Edition: </b> {{ book.edition if book.edition is not none else 'N/A' }}</p>
+            </td></tr>
+            <tr><td>
+                <p><b>Year: </b> {{ book.year if book.year is not none else 'N/A' }}</p>
+            </td></tr>
+            <tr><td>
+                <p><b>Language: </b> {{ book.language if book.language is not none else 'N/A' }}</p>
+            </td></tr>
+            <tr><td>
+                <p><b>Price: </b> {{ book.price if book.price is not none else 'N/A' }}</p>
+            </td></tr>
+          </tbody>
+        </table>
 
-          <br>
-          <hr>
-          <br>
+        <br>
+        <hr>
+        <br>
 
-          <h5>More about this book</h5>
-          <br>
-          <table class="striped">
-            <tbody>
-              <tr><td>
-                  <p><b>Format: </b> {{ book.format if book.format is not none else 'N/A' }}</p>
-              </td></tr>
-              <tr><td>
-                  <p><b>Number of pages: </b> {{ book.pages if book.pages is not none else 'N/A' }}</p>
-              </td></tr>
-              <tr><td>
-                  <p><b>Weight (kg): </b> {{ book.weight if book.weight is not none else 'N/A' }}</p>
-              </td></tr>
-              <tr><td>
-                  <p><b>Height (cm): </b> {{ book.height if book.height is not none else 'N/A' }}</p>
-              </td></tr>
-              <tr><td>
-                  <p><b>Width (cm): </b> {{ book.width if book.width is not none else 'N/A' }}</p>
-              </td></tr>
-              <tr><td>
-                  <p><b>ISBN: </b>{{ book.isbn if book.isbn is not none else 'N/A' }}</p>
-              </td></tr>
-            </tbody>
-          </table>
-          
-        </div>
-        <div class="card-action">
-          <div class="row">
-            <buttton data-target="modal-delete"
-                     class="btn waves-effect waves-light red right modal-trigger">Delete</button>
-</div>
-</div>
-</div>
-</div>
-<div class="col s12 m3">
-  <div class="card">
-    <div class="card-content">
-      <span class="card-title">Sidebar</span>
-      <p>Some text...</p>
+        <h5>More about this book</h5>
+        <br>
+        <table class="striped">
+          <tbody>
+            <tr><td>
+                <p><b>Format: </b> {{ book.format if book.format is not none else 'N/A' }}</p>
+            </td></tr>
+            <tr><td>
+                <p><b>Number of pages: </b> {{ book.pages if book.pages is not none else 'N/A' }}</p>
+            </td></tr>
+            <tr><td>
+                <p><b>Weight (kg): </b> {{ book.weight if book.weight is not none else 'N/A' }}</p>
+            </td></tr>
+            <tr><td>
+                <p><b>Height (cm): </b> {{ book.height if book.height is not none else 'N/A' }}</p>
+            </td></tr>
+            <tr><td>
+                <p><b>Width (cm): </b> {{ book.width if book.width is not none else 'N/A' }}</p>
+            </td></tr>
+            <tr><td>
+                <p><b>ISBN: </b>{{ book.isbn if book.isbn is not none else 'N/A' }}</p>
+            </td></tr>
+          </tbody>
+        </table>
+        
+      </div>
+      <div class="card-action">
+
+        <ul class="collapsible">
+          <li>
+            <div class="collapsible-header"><i class="material-icons">settings</i>More Options</div>
+            <div class="collapsible-body">
+              <div class="right-align">
+                <a href="/books/edit/{{ book.id }}"
+                        class="btn waves-effect waves-light blue lighten-1">Update<i class="material-icons right">edit</i></a>
+                <button data-target="modal-delete"
+                        class="btn waves-effect waves-light blue lighten-1 modal-trigger">Delete<i class="material-icons right">delete</i></button>
+                </div>
+            </div>
+          </li>
+        </ul>
+        
+      </div>
     </div>
-    <div class="card-action">
-      <!--<a href="#">This is a link</a>-->
+  </div>
+  <div class="col s12 m3">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">Sidebar</span>
+        <p>Some text...</p>
+      </div>
+      <div class="card-action">
+        <!--<a href="#">This is a link</a>-->
+      </div>
     </div>
   </div>
 </div>
 {% endblock %}
 
 {% block extrabody %}
-  <div id="modal-delete" class="modal">
-    <div class="modal-content">
-      <h4> Are you sure to delete this book?</h4>
-      <p>This action can not be undone and "{{ book.title }} - {{ book.author }}" will be permanently deleted.</p>
-    </div>
-    <div class="modal-footer">
-      <form method="POST" action="{{url_for('del_book')}}">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Back</a>
-        <input type="hidden" name="book_id" value="{{ book.id }}">
-        <button type="submit" class="modal-close waves-effect red white-text btn-flat">Delete</button>
-      </form>
-    </div>
+<div id="modal-delete" class="modal">
+  <div class="modal-content">
+    <h4> Are you sure to delete this book?</h4>
+    <p>This action can not be undone and "{{ book.title }} - {{ book.author }}" will be permanently deleted.</p>
   </div>
-  <script>
-    $(document).ready(function(){
-        $('.modal').modal();
-    });
-  </script>
+  <div class="modal-footer">
+    <form method="POST" action="{{url_for('del_book')}}">
+      <a href="#!" class="modal-close waves-effect btn-flat">Back</a>
+      <input type="hidden" name="book_id" value="{{ book.id }}">
+      <button type="submit" class="modal-close waves-effect red white-text btn-flat">Delete</button>
+    </form>
+  </div>
+</div>
+<script>
+  $(document).ready(function(){
+      $('.modal').modal();
+  });
+  $(document).ready(function(){
+    $('.collapsible').collapsible();
+  });
+</script>
 {% endblock %}

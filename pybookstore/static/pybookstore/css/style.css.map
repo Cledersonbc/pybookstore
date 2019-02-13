@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAAA,kBAAwB;EACvB,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;;ACFxB,EAAG;EACF,YAAY,ECDE,OAAO;EDErB,YAAY,EAAE,GAAG;EACjB,YAAY,EAAE,KAAK;;AAGpB,MAAO;EACN,UAAU,EAAE,OAAO",
+"mappings": "AAAA,kBAAwB;EACvB,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;;ACFxB,UAGC;EAFG,WAAW,EAAE,QAAQ;EACrB,GAAG,EAAE,uEAAuE;AAGhF,IAAK;EACD,WAAW,EAAE,QAAQ;;AAGzB,EAAG;EACF,YAAY,ECVE,OAAO;EDWrB,YAAY,EAAE,GAAG;EACjB,YAAY,EAAE,KAAK;;AAGpB,MAAO;EACN,UAAU,EAAE,OAAO",
 "sources": ["../scss/utils/_placeholders.scss","../scss/pages/_all.scss","../scss/utils/variables/_colors.scss"],
 "names": [],
 "file": "style.css"

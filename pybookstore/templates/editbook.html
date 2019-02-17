@@ -10,15 +10,15 @@
 
           <br>
           <form method="POST" action="/books/edit/{{ book.id }}">
-            <h6>General Information</h6>
+            <h5><i class="left material-icons">public</i>General Information</h5><br>
             <div class="row">
               <div class="input-field col s6">
-                <input id="name" name="title" type="text" class="validate" value="{{ book.title }}" required>
+                <input id="name" name="title" type="text" class="validate" value="{{ book.title }}" maxlength="100" required>
                 <label for="name">Title</label>
                 <span class="helper-text" data-error="Name of the book are required" data-success="OK"></span>
               </div>
               <div class="input-field col s6">
-                <input  id="author" name="author" type="text" class="validate" value="{{ book.author }}" required>
+                <input  id="author" name="author" type="text" class="validate" value="{{ book.author }}" maxlength="64" required>
                 <label for="author">Author</label>
                 <span class="helper-text" data-error="Name of the author are required" data-success="OK"></span>
               </div>
@@ -26,7 +26,7 @@
 
             <div class="row">
               <div class="input-field col s12">
-                <textarea id="subtitle" name="subtitle" placeholder="Subtitle of this book" class="materialize-textarea">{{ book.subtitle }}</textarea>
+                <textarea id="subtitle" name="subtitle" placeholder="Subtitle of this book" class="materialize-textarea" maxlength="100" cols="100">{{ book.subtitle }}</textarea>
                 <label for="subtitle">Subtitle</label>
                 <span class="helper-text"></span>
               </div>
@@ -34,17 +34,17 @@
 
             <div class="row">
               <div class="input-field col s12">
-                <textarea id="description" name="description" placeholder="Summary or description about the book" class="materialize-textarea" class="validate" required>{{ book.description }}</textarea>
+                <textarea id="description" name="description" placeholder="Summary or description about the book" class="materialize-textarea" class="validate" maxlength="1000" cols="1000" required>{{ book.description }}</textarea>
                 <label for="description">Description</label>
                 <span class="helper-text" data-error="Description or summary of the book are required" data-success="OK"></span>
               </div>
             </div>
 
             <br>
-            <h6>Information more Specific</h6>
+            <h5><i class="left material-icons">description</i>Information more Specific</h5>
             <div class="row">
               <div class="input-field col s6">
-                <input id="publisher" name="publisher" type="text" class="validate" value="{{ book.publisher }}">
+                <input id="publisher" name="publisher" type="text" class="validate" value="{{ book.publisher }}" maxlength="64">
                 <label for="publisher">Publisher</label>
               </div>
               <div class="input-field col s6">
@@ -70,10 +70,10 @@
             </div>
 
             <br>
-            <h6>Extra</h6>
+            <h5><i class="left material-icons">star</i>Extra</h5>
             <div class="row">
               <div class="input-field col s6">
-                <input id="language" name="language" type="text" class="validate" value="{{ book.language }}">
+                <input id="language" name="language" type="text" class="validate" value="{{ book.language }}" maxlength="32">
                 <label for="language">Language</label>
               </div>
               <div class="input-field col s6">
@@ -84,22 +84,22 @@
 
             <div class="row">
               <div class="input-field col s6">
-                <input id="weight" name="weight" min="0" max="1000" type="number" class="validate" value="{{ book.weight }}">
+                <input id="weight" name="weight" type="text" class="validate" value="{{ book.weight }}">
                 <label for="weight">Weight (kg)</label>
               </div>
               <div class="input-field col s6">
-                <input id="pages" name="pages" type="number" class="validate" value="{{ book.pages }}" >
+                <input id="pages" name="pages" type="number" class="validate" value="{{ book.pages }}" min="1" max="999999">
                 <label for="pages">Number of Pages</label>
               </div>
             </div>
 
             <div class="row">
               <div class="input-field col s6">
-                <input id="width" name="width" min="0" max="1000" type="number" class="validate" value="{{ book.width }}">
+                <input id="width" name="width" type="text" class="validate" value="{{ book.width }}">
                 <label for="width">Width (cm)</label>
               </div>
               <div class="input-field col s6">
-                <input id="height" name="height" min="0" max="1000" type="number" class="validate" value="{{ book.height }}">
+                <input id="height" name="height" type="text" class="validate" value="{{ book.height }}">
                 <label for="height">Height (cm)</label>
               </div>
             </div>
@@ -112,7 +112,7 @@
             </div>
 
             <div class="row">
-              <a href="/books/view/{{ book.id }}" class="waves-effect waves-light btn btn-large grey darken-2 left">Cancel</a>
+              <a href="/books/view/{{ book.id }}" class="waves-effect waves-light btn btn-large grey darken-1 left">Cancel</a>
               <button class="waves-effect waves-light btn btn-large blue lighten-1 right">Save</button>
             </div>
           </form>

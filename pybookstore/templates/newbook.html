@@ -10,7 +10,7 @@
 
           <br>
           <form method="POST" action="/books/new">
-            <h6>General Information</h6>
+            <h5><i class="left material-icons">public</i>General Information</h5>
             <div class="row">
               <div class="input-field col s6">
                 <input id="name" name="title" type="text" class="validate" maxlength="100" required>
@@ -41,7 +41,7 @@
             </div>
 
             <br>
-            <h6>Information more Specific</h6>
+            <h5><i class="left material-icons">description</i>Information more Specific</h5>
             <div class="row">
               <div class="input-field col s6">
                 <input id="publisher" name="publisher" type="text" class="validate" maxlength="64">
@@ -70,7 +70,7 @@
             </div>
 
             <br>
-            <h6>Extra</h6>
+            <h5><i class="left material-icons">star</i>Extra</h5>
             <div class="row">
               <div class="input-field col s6">
                 <input id="language" name="language" type="text" class="validate" maxlength="32">
@@ -88,7 +88,7 @@
                 <label for="weight">Weight (kg)</label>
               </div>
               <div class="input-field col s6">
-                <input id="pages" name="pages" type="number" class="validate">
+                <input id="pages" name="pages" type="number" class="validate" min="1" max="999999">
                 <label for="pages">Number of Pages</label>
               </div>
             </div>
@@ -112,7 +112,7 @@
             </div>
 
             <div class="row">
-              <a href="/books/mybooks" class="waves-effect waves-light btn btn-large grey darken-2 left">Cancel</a>
+              <a href="/books/mybooks" class="waves-effect waves-light btn btn-large grey darken-1 left">Cancel</a>
               <button class="waves-effect waves-light btn btn-large blue lighten-1 right">Save</button>
             </div>
           </form>

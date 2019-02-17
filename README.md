@@ -36,15 +36,15 @@ The swagger-ui is available at [http://localhost/api/ui](http://localhost/api/ui
 
 **Adjusts on CRUD pages**
 * [ ] Validate inputs and ranges (it depends on the database)
-* [ ] Add footer
+* [X] Add footer
 * [ ] Add relevant actions on navbar
 * [ ] Add some widgets on sidebar
 * [ ] Uploud of images on book
-* [ ] Compatible input with database columns
+* [X] Compatible input with database columns
 * [ ] Beautiful layout of CRUD pages (book)
 * [ ] Logo
 * [ ] Add some logo on header
-* [ ] Navigation between CRUD pages
+* [X] Navigation between CRUD pages
 * [ ] Uploud of images
 
 

@@ -9,16 +9,16 @@
           <span class="card-title">{{ book.title }} - {{ book.author }}</span>
 
           <br>
-          <form method="POST" action="/books/edit/{{ book.id }}">
+          <form method="POST" action="/books/edit/{{ book.id }}" id="edit-book-form">
             <h5><i class="left material-icons">public</i>General Information</h5><br>
             <div class="row">
               <div class="input-field col s6">
-                <input id="name" name="title" type="text" class="validate" value="{{ book.title }}" maxlength="100" required>
+                <input id="name" name="title" type="text" class="validate" value="{{ book.title if book.title is not none }}" maxlength="100" required>
                 <label for="name">Title</label>
                 <span class="helper-text" data-error="Name of the book are required" data-success="OK"></span>
               </div>
               <div class="input-field col s6">
-                <input  id="author" name="author" type="text" class="validate" value="{{ book.author }}" maxlength="64" required>
+                <input  id="author" name="author" type="text" class="validate" value="{{ book.author if book.author is not none }}" maxlength="64" required>
                 <label for="author">Author</label>
                 <span class="helper-text" data-error="Name of the author are required" data-success="OK"></span>
               </div>
@@ -26,7 +26,7 @@
 
             <div class="row">
               <div class="input-field col s12">
-                <textarea id="subtitle" name="subtitle" placeholder="Subtitle of this book" class="materialize-textarea" maxlength="100" cols="100">{{ book.subtitle }}</textarea>
+                <textarea id="subtitle" name="subtitle" placeholder="Subtitle of this book" class="materialize-textarea" maxlength="100" cols="100">{{ book.subtitle if book.subtitle is not none }}</textarea>
                 <label for="subtitle">Subtitle</label>
                 <span class="helper-text"></span>
               </div>
@@ -34,7 +34,7 @@
 
             <div class="row">
               <div class="input-field col s12">
-                <textarea id="description" name="description" placeholder="Summary or description about the book" class="materialize-textarea" class="validate" maxlength="1000" cols="1000" required>{{ book.description }}</textarea>
+                <textarea id="description" name="description" placeholder="Summary or description about the book" class="materialize-textarea" class="validate" maxlength="1000" cols="1000" required>{{ book.description if book.description is not none }}</textarea>
                 <label for="description">Description</label>
                 <span class="helper-text" data-error="Description or summary of the book are required" data-success="OK"></span>
               </div>
@@ -44,18 +44,19 @@
             <h5><i class="left material-icons">description</i>Information more Specific</h5>
             <div class="row">
               <div class="input-field col s6">
-                <input id="publisher" name="publisher" type="text" class="validate" value="{{ book.publisher }}" maxlength="64">
+                <input id="publisher" name="publisher" type="text" class="validate" value="{{ book.publisher if book.publisher is not none }}" maxlength="64">
                 <label for="publisher">Publisher</label>
               </div>
               <div class="input-field col s6">
-                <input  id="edition" name="edition" min="1" max="999" type="number" value="{{ book.edition }}" class="validate">
+                <input  id="edition" name="edition" min="1" max="999" type="number" value="{{ book.edition if book.edition is not none }}" class="validate">
                 <label for="edition">Edition</label>
               </div>
             </div>
 
             <div class="row">
               <div class="input-field col s6">
-                <input id="isbn" name="isbn" type="text" class="validate" value="{{ book.isbn }}">
+                <input id="isbn" name="isbn" type="text" class="validate" value="{{ book.isbn if book.isbn is not none }}"
+                       pattern="(ISBN[-]*(1[03])*[ ]*(: ){0,1})*(([0-9Xx][- ]*){13}|([0-9Xx][- ]*){10})">
                 <label for="isbn">ISBN</label>
               </div>
 
@@ -73,7 +74,7 @@
             <h5><i class="left material-icons">star</i>Extra</h5>
             <div class="row">
               <div class="input-field col s6">
-                <input id="language" name="language" type="text" class="validate" value="{{ book.language }}" maxlength="32">
+                <input id="language" name="language" type="text" class="validate" value="{{ book.language if book.language is not none }}" maxlength="32">
                 <label for="language">Language</label>
               </div>
               <div class="input-field col s6">
@@ -84,29 +85,29 @@
 
             <div class="row">
               <div class="input-field col s6">
-                <input id="weight" name="weight" type="text" class="validate" value="{{ book.weight }}">
+                <input id="weight" name="weight" type="text" class="validate" value="{{ book.weight if book.weight is not none }}">
                 <label for="weight">Weight (kg)</label>
               </div>
               <div class="input-field col s6">
-                <input id="pages" name="pages" type="number" class="validate" value="{{ book.pages }}" min="1" max="999999">
+                <input id="pages" name="pages" type="number" class="validate" value="{{ book.pages if book.pages is not none }}" min="1" max="999999">
                 <label for="pages">Number of Pages</label>
               </div>
             </div>
 
             <div class="row">
               <div class="input-field col s6">
-                <input id="width" name="width" type="text" class="validate" value="{{ book.width }}">
+                <input id="width" name="width" type="text" class="validate" value="{{ book.width if book.width is not none }}">
                 <label for="width">Width (cm)</label>
               </div>
               <div class="input-field col s6">
-                <input id="height" name="height" type="text" class="validate" value="{{ book.height }}">
+                <input id="height" name="height" type="text" class="validate" value="{{ book.height if book.height is not none }}">
                 <label for="height">Height (cm)</label>
               </div>
             </div>
 
             <div class="row">
               <div class="input-field col s12">
-                <input id="price" name="price" type="text"  class="validate" value="{{ book.price }}">
+                <input id="price" name="price" type="text"  class="validate" value="{{ book.price if book.price is not none}}">
                 <label for="price">Price</label>
               </div>
             </div>
@@ -126,6 +127,10 @@
   <script>
     $(document).ready(function(){
         $('select').formSelect();
+    });
+    $('#edit-book-form').submit(() => {
+        let isbn = $('#isbn');
+        isbn.val( isbn.val().replace(/^\D*|[\s\-]/g, '') );
     });
   </script>
 {% endblock%}

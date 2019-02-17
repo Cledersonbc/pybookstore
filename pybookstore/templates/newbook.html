@@ -9,7 +9,7 @@
           <span class="card-title">Register your new Book</span>
 
           <br>
-          <form method="POST" action="/books/new">
+          <form method="POST" action="/books/new" id="new-book-form">
             <h5><i class="left material-icons">public</i>General Information</h5>
             <div class="row">
               <div class="input-field col s6">
@@ -55,7 +55,8 @@
 
             <div class="row">
               <div class="input-field col s6">
-                <input id="isbn" name="isbn" type="text" class="validate">
+                <input id="isbn" name="isbn" type="text" class="validate"
+                       pattern="(ISBN[-]*(1[03])*[ ]*(: ){0,1})*(([0-9Xx][- ]*){13}|([0-9Xx][- ]*){10})">
                 <label for="isbn">ISBN</label>
               </div>
 
@@ -123,9 +124,13 @@
 {% endblock %}
 
 {% block extrabody %}
-    <script>
+  <script>
     $(document).ready(function(){
         $('select').formSelect();
+        $('#new-book-form').submit(() => {
+            let isbn = $('#isbn');
+            isbn.val( isbn.val().replace(/^\D*|[\s\-]/g, '') );
+        });
     });
-</script>
+  </script>
 {% endblock%}

@@ -7,20 +7,20 @@
     <div class="card white">
       <div class="card-content">
         <span class="card-title">
-          {{ book.title }}{{ ': ' + book.subtitle if book.subtitle is not none }} - {{ book.author }}
+          {{ book.title }}{{ ': ' + book.subtitle if book.subtitle != '' }} - {{ book.author }}
         </span>
         <br>
-        <p>{{ book.description if book.description is not none else 'N/A' }}</p>
+        <p>{{ book.description if book.description != '' else 'N/A' }}</p>
         <br>
         <b></b>
 
         <table class="striped">
           <tbody>
             <tr><td>
-                <p><b>Author: </b> {{ book.author if book.author is not none else 'N/A' }}</p>
+                <p><b>Author: </b> {{ book.author if book.author != '' else 'N/A' }}</p>
             </td></tr>
             <tr><td>
-                <p><b>Publisher: </b> {{ book.publisher if book.publisher is not none else 'N/A' }}</p>
+                <p><b>Publisher: </b> {{ book.publisher if book.publisher != '' else 'N/A' }}</p>
             </td></tr>
             <tr><td>
                 <p><b>Edition: </b> {{ book.edition if book.edition is not none else 'N/A' }}</p>
@@ -29,7 +29,7 @@
                 <p><b>Year: </b> {{ book.year if book.year is not none else 'N/A' }}</p>
             </td></tr>
             <tr><td>
-                <p><b>Language: </b> {{ book.language if book.language is not none else 'N/A' }}</p>
+                <p><b>Language: </b> {{ book.language if book.language != '' else 'N/A' }}</p>
             </td></tr>
             <tr><td>
                 <p><b>Price: </b> {{ book.price if book.price is not none else 'N/A' }}</p>

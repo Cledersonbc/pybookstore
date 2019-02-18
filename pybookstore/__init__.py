@@ -9,6 +9,7 @@ connexion_app = connexion.App(__name__, specification_dir='config/api')
 
 app = connexion_app.app
 app.config.from_object('pybookstore.settings.local')
+print(app.config)
 db = SQLAlchemy(app)
 ma = Marshmallow(app)
 

@@ -20,8 +20,8 @@
           <br>
 
           <button onclick="loadExample()" class="waves-effect waves-light btn-small">Load Example</button>
-          <div id="test-book" class="collection">
-          </div>
+          <pre id="test-book" class="collection">
+          </pre>
           
         </div>
       </div>
@@ -37,7 +37,7 @@
             url: '/api/books',
             dataType: 'json',
             success: function successFunction(data) {
-                $("#test-book").html("<a href=\"#!\" class=\"collection-item\">"+ data.title +" - "+ data.author +"</a>");
+                $("#test-book").text(JSON.stringify(data[0], null, '\t'));
             }
         });
     }

@@ -5,17 +5,13 @@ import os
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
-connextion_app = connexion.App(__name__, specification_dir='config/api')
-connextion_app.add_api('swagger.yml')
+connexion_app = connexion.App(__name__, specification_dir='config/api')
 
-URL_SQL = os.path.join(basedir, 'db.sqlite3')
-
-app = connextion_app.app
-app.config["SQLALCHEMY_ECHO"] = True
-app.config["SQLALCHEMY_DATABASE_URI"] = f'sqlite:///{URL_SQL}'
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-app.config["SECRET_KEY"] = b'\26A5#!6_2@SA\\&'
+app = connexion_app.app
+app.config.from_object('pybookstore.settings.local')
 db = SQLAlchemy(app)
 ma = Marshmallow(app)
+
+connexion_app.add_api('swagger.yml')
 
 from pybookstore import routes

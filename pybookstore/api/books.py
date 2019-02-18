@@ -1,14 +1,14 @@
 import json
 import os
 
-from pybookstore import basedir
+from pybookstore import BASE_DIR
 from pybookstore.models import Book
 from pybookstore.schemas import BookSchema
 
 
 def read_example():
     try:
-        path = os.path.join(basedir, 'example', 'books.json')
+        path = os.path.join(BASE_DIR, 'example', 'books.json')
         with open(path) as json_data:
             return json.load(json_data)
     except FileNotFoundError as e:

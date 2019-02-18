@@ -59,7 +59,7 @@ paths:
                   type: integer
 
 
-  /books/{bookId}:
+  /books/{book_id}:
     get:
       operationId: pybookstore.api.books.read
       tags:
@@ -67,7 +67,7 @@ paths:
       summary: Return a book by ID
       description: Read a book
       parameters:
-        - name: bookId
+        - name: book_id
           in: path
           required: true
           description: ID of the book

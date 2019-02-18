@@ -1,6 +1,9 @@
 import json
 import os
+
 from pybookstore import basedir
+from pybookstore.models import Book
+from pybookstore.schemas import BookSchema
 
 
 def read_example():
@@ -18,13 +21,22 @@ def read_all():
     URL: /api/books
     :return: a list of books
     """
-    print('aee')
-    return read_example()
+    books = Book.query.all()
+    book_schema = BookSchema(many=True)
+    if books is not None:
+        return book_schema.jsonify(books)
+
+    return None
 
 
-def read(bookId):
+def read(book_id):
     """
-    URL: /api/books/{bookId}
+    URL: /api/books/{book_id}
     :return: a book (if found) by ID
     """
+    book = Book.query.get(book_id)
+    book_schema = BookSchema()
+    if book is not None:
+        return book_schema.dump(book).data
+
     return None

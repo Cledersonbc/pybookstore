@@ -83,7 +83,7 @@ def edit_book(book_id):
     if request.method == 'POST':
         BookForm = model_form(Book)
         form = BookForm(request.form, obj=book)
-        
+
         if form.validate():
             form.populate_obj(book)
             db.session.add(book)

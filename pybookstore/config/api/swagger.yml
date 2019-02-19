@@ -56,7 +56,54 @@ paths:
                 edition:
                   type: integer
                 isbn:
-                  type: integer
+                  type: string
+    post:
+      operationId: pybookstore.api.books.create
+      tags:
+        - Books
+      summary: Create a new book
+      description: Create a new book
+      parameters:
+        - name: book
+          in: body
+          description: book to create
+          required: True
+          schema:
+            type: object
+            properties:
+              title:
+                type: string
+              subtitle:
+                type: string
+              price:
+                type: number
+              height:
+                type: number
+              width:
+                type: number
+              weight:
+                type: number
+              author:
+                type: string
+              description:
+                type: string
+              year:
+                type: integer
+              format:
+                type: string
+              pages:
+                type: integer
+              language:
+                type: string
+              publisher:
+                type: string
+              edition:
+                type: integer
+              isbn:
+                type: string
+      responses:
+        201:
+          description: CREATED
 
 
   /books/{book_id}:
@@ -108,4 +155,4 @@ paths:
               edition:
                 type: integer
               isbn:
-                type: integer
+                type: string

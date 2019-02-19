@@ -22,7 +22,7 @@ def new_book():
         book = Book()
         BookForm = model_form(Book)
         form = BookForm(request.form, obj=book)
-        print(request.form)
+
         if form.validate():
             form.populate_obj(book)
             db.session.add(book)
@@ -92,7 +92,7 @@ def edit_book(book_id):
             book_info = book.title + ' - ' + book.author
             flash(f'The Book "{book_info}" was updated successfully.',
                   'success')
-            print('updated')
+
             return redirect(url_for('index'))
 
     return render_template('editbook.html', book=book)

@@ -1,7 +1,10 @@
 import json
 import os
 
+from marshmallow import ValidationError
+
 from pybookstore import BASE_DIR
+from pybookstore import db
 from pybookstore.models import Book
 from pybookstore.schemas import BookSchema
 
@@ -40,3 +43,18 @@ def read(book_id):
         return book_schema.dump(book).data
 
     return None
+
+
+def create(book):
+    """
+    URL: /api/books
+    :return: a book (if created) with ID
+    """
+    try:
+        book_schema = BookSchema(strict=True)
+        new_book = book_schema.load(book, session=db.session).data
+        db.session.add(new_book)
+        db.session.commit()
+        return book_schema.dump(new_book).data
+    except ValidationError:
+        return None

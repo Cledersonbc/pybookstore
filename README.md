@@ -72,7 +72,7 @@ The swagger-ui is available at [http://localhost/api/ui](http://localhost/api/ui
 * [ ] Update a book (endpoint)
 * [ ] Delete a book (endpoint)
 * [X] See a list of books (endpoint)
-* [ ] Create new book (functional)
+* [X] Create new book (functional)
 * [X] See a book (functional)
 * [ ] Update a book (functional)
 * [ ] Delete a book (functional)

@@ -105,6 +105,56 @@ paths:
         201:
           description: CREATED
 
+    put:
+      operationId: pybookstore.api.books.update
+      tags:
+        - Books
+      summary: Update a book
+      description: Update a book
+      parameters:
+        - name: book
+          in: body
+          description: update a book
+          required: True
+          schema:
+            type: object
+            properties:
+              id:
+                type: integer
+              title:
+                type: string
+              subtitle:
+                type: string
+              price:
+                type: number
+              height:
+                type: number
+              width:
+                type: number
+              weight:
+                type: number
+              author:
+                type: string
+              description:
+                type: string
+              year:
+                type: integer
+              format:
+                type: string
+              pages:
+                type: integer
+              language:
+                type: string
+              publisher:
+                type: string
+              edition:
+                type: integer
+              isbn:
+                type: string
+      responses:
+        200:
+          description: OK
+
 
   /books/{book_id}:
     get:

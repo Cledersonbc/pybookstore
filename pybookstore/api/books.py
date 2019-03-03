@@ -58,3 +58,20 @@ def create(book):
         return book_schema.dump(new_book).data
     except ValidationError:
         return None
+
+
+def update(book):
+    """
+        URL: /api/books/
+        :return: a updated book (if found)
+        """
+    try:
+        saved_book = Book.query.filter_by(id=book.get('id'))
+
+        if saved_book is not None:
+            book_schema = BookSchema(strict=True)
+            saved_book.update(book)
+            db.session.commit()
+            return book_schema.dump(saved_book).data
+    except ValidationError:
+        return None

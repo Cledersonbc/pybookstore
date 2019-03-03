@@ -49,7 +49,7 @@ The swagger-ui is available at [http://localhost/api/ui](http://localhost/api/ui
 
 
 **Database**
-* [ ] Use of ORM
+* [X] Use of ORM
 * [X] Create DAO of book
 * [ ] Create DAO of account
 
@@ -70,12 +70,12 @@ The swagger-ui is available at [http://localhost/api/ui](http://localhost/api/ui
 * [X] Create new book (endpoint)
 * [X] See a book (endpoint)
 * [X] Update a book (endpoint)
-* [ ] Delete a book (endpoint)
+* [X] Delete a book (endpoint)
 * [X] See a list of books (endpoint)
 * [X] Create new book (functional)
 * [X] See a book (functional)
 * [X] Update a book (functional)
-* [ ] Delete a book (functional)
+* [X] Delete a book (functional)
 * [X] See a list of books (functional)
 
 
